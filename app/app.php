@@ -1,6 +1,6 @@
 <?php
     require_once __DIR__."/../vendor/autoload.php";
-    require_once __DIR__."/../src/DayOfWeek.php";
+    require_once __DIR__."/../src/WordFrequency.php";
     date_default_timezone_set('America/Los_Angeles');
     // session_start();
     // if (empty($_SESSION['list_of_albums'])) {
@@ -13,10 +13,11 @@
     $app->get("/", function() use ($app) {
         return $app['twig']->render('home.html.twig');
     });
-    $app->post("/result", function() use ($app) {
-        $newClasss = new Classs;
-        $day = $newClasss->getDayOfWeek($_POST['month'], $_POST['date'], $_POST['year']);
-        return $app['twig']->render('home.html.twig', array('day' => $day));
+
+    $app->get("/result", function() use ($app) {
+        $newWordFrequency = new WordFrequency;
+        $result = $newWordFrequency->getWordFrequency($_GET['searchWord'], $_GET['words']);
+        return $app['twig']->render('result.html.twig', array('result' => $result));
     });
     return $app;
 ?>

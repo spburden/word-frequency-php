@@ -9,11 +9,13 @@
         <div class="container">
             <h1>Calculate Frequency of a Word</h1>
             <form class="form-group" action="/result" method="get">
-                <label for="searchWord">Enter a word a search word:</label>
+                <label for="searchWord">Enter word a to search for:</label>
                 <input type="text" name="searchWord" required>
+                <br>
+                <br>
                 <label for="words">Enter Text:</label>
-                <textarea class="form-control" rows="5" name="words"></textarea>
-                <button type="submit" name="button">Return</button>
+                <textarea class="form-control" rows="5" name="words" required></textarea>
+                <button class="btn btn-primary" type="submit">Calculate</button>
             </form>
         </div>
     </body>
