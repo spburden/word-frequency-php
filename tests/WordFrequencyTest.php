@@ -76,7 +76,7 @@
         {
             //Arrange
             $test_WordFrequency = new WordFrequency;
-            $searchWord = "hello";
+            $searchWord = "Hello";
             $words = "Bye, dude!";
 
             //Act
