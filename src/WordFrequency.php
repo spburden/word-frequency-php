@@ -4,6 +4,8 @@
 
         function frequencyOfAWord($searchWord, $word)
         {
+            $searchWord = strtolower($searchWord);
+            $word = strtolower($word);
             $wordCount = 0;
             if ($searchWord == $word) {
                 $wordCount += 1;
