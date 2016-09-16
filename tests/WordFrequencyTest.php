@@ -1,55 +1,55 @@
 <?php
     require_once "src/WordFrequency.php";
-    class WordFrequencyTest extends PHPUnit_Framework_TestCase
+    class RepeatCounterTest extends PHPUnit_Framework_TestCase
     {
-        function test_compareOneWord()
+        function test_compareOneWord_isWordFound()
         {
             //Arrange
-            $test_WordFrequency = new WordFrequency;
+            $test_RepeatCounter = new RepeatCounter;
             $searchWord = "Hello";
             $word = "Hello";
 
             //Act
-            $output = $test_WordFrequency->compareOneWord($searchWord, $word);
+            $output = $test_RepeatCounter->compareOneWord($searchWord, $word);
 
             //Assert
             $this->assertEquals(1, $output);
         }
-        function test_isWordFound()
+        function test_compareOneWord_isWordNotFound()
         {
             //Arrange
-            $test_WordFrequency = new WordFrequency;
+            $test_RepeatCounter = new RepeatCounter;
             $searchWord = "Hello";
             $word = "Bye";
 
             //Act
-            $output = $test_WordFrequency->isWordFound($searchWord, $word);
+            $output = $test_RepeatCounter->compareOneWord($searchWord, $word);
 
             //Assert
-            $this->assertEquals("No Match Found!", $output);
+            $this->assertEquals(0, $output);
         }
-        function test_caseDoesNotMatter()
+        function test_compareOneWord_caseDoesNotMatter()
         {
             //Arrange
-            $test_WordFrequency = new WordFrequency;
+            $test_RepeatCounter = new RepeatCounter;
             $searchWord = "hello";
             $word = "Hello";
 
             //Act
-            $output = $test_WordFrequency->compareOneWord($searchWord, $word);
+            $output = $test_RepeatCounter->compareOneWord($searchWord, $word);
 
             //Assert
             $this->assertEquals(1, $output);
         }
-        function test_punctuationDoesNotMatter()
+        function test_compareOneWord_punctuationDoesNotMatter()
         {
             //Arrange
-            $test_WordFrequency = new WordFrequency;
-            $searchWord = "hello.";
-            $word = "Hell'.o!!,(?:;)";
+            $test_RepeatCounter = new RepeatCounter;
+            $searchWord = "hello";
+            $word = "Hello!!";
 
             //Act
-            $output = $test_WordFrequency->compareOneWord($searchWord, $word);
+            $output = $test_RepeatCounter->compareOneWord($searchWord, $word);
 
             //Assert
             $this->assertEquals(1, $output);
@@ -57,28 +57,41 @@
         function test_frequencyOfMultipleWords()
         {
             //Arrange
-            $test_WordFrequency = new WordFrequency;
-            $searchWord = "hello";
-            $words = "Hello/world, hello!";
+            $test_RepeatCounter = new RepeatCounter;
+            $searchWord = "Hello";
+            $words = "Hello world, hello";
 
             //Act
-            $output = $test_WordFrequency->frequencyOfMultipleWords($searchWord, $words);
+            $output = $test_RepeatCounter->frequencyOfMultipleWords($searchWord, $words);
 
             //Assert
             $this->assertEquals(2, $output);
         }
-        function test_getWordFrequency()
+        function test_frequencyOfMultipleWords_forwardSlashesDoNotMatter()
         {
             //Arrange
-            $test_WordFrequency = new WordFrequency;
+            $test_RepeatCounter = new RepeatCounter;
+            $searchWord = "Night";
+            $words = "Day/night";
+
+            //Act
+            $output = $test_RepeatCounter->frequencyOfMultipleWords($searchWord, $words);
+
+            //Assert
+            $this->assertEquals(1, $output);
+        }
+        function test_countRepeats_noMatchesFound()
+        {
+            //Arrange
+            $test_RepeatCounter = new RepeatCounter;
             $searchWord = "Hello";
             $words = "Bye, dude!";
 
             //Act
-            $output = $test_WordFrequency->getWordFrequency($searchWord, $words);
+            $output = $test_RepeatCounter->countRepeats($searchWord, $words);
 
             //Assert
-            $this->assertEquals("No Match Found!", $output);
+            $this->assertEquals("No Matches Found!", $output);
         }
     }
         // export PATH=$PATH:./vendor/bin first and then you will only have to run  $ phpunit tests

@@ -13,7 +13,9 @@ _A basic web application which returns the frequency of a certain word in a para
 | Take a search word and a word then returns frequency of search word regardless of case | hello, Hello | 1 |
 | Take a search word and a word then returns frequency of search word regardless of punctuation that follows the word | hello, Hello!! | 1 |
 | Take a search word and multiple words then returns frequency of search word in multiple words | Hello, Hello world, hello. | 2 |
-| If search word is not found, return no match found | Hello, "Bye, dude!" | "No Match Found!" |
+| It does not matter if words are connected by a '/' | Night, Day/night | 1 |
+| If search word is not found, return no match found | Hello, Bye, dude! | "No Matches Found!" |
+
 
 
 ## Setup/Installation Requirements

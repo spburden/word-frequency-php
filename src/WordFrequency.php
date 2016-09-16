@@ -1,7 +1,6 @@
 <?php
-    class WordFrequency
+    class RepeatCounter
     {
-
         function compareOneWord($searchWord, $word)
         {
             $searchWord = strtolower($searchWord);
@@ -23,15 +22,13 @@
             }
             return $wordCount;
         }
-
-        function isWordFound($searchWord, $word)
-        {
-            if ($this->compareOneWord($searchWord, $word) == 0) {
-                $output = "No Match Found!";
-            }
-            return $output;
-        }
-
+        // function isWordFound($searchWord, $word)
+        // {
+        //     if ($this->compareOneWord($searchWord, $word) == 0) {
+        //         $output = "No Matches Found!";
+        //     }
+        //     return $output;
+        // }
         function frequencyOfMultipleWords($searchWord, $words)
         {
             $words = str_ireplace("/", " ", $words);
@@ -42,14 +39,13 @@
             }
             return $wordCount;
         }
-
-        function getWordFrequency($searchWord, $words)
+        function countRepeats($searchWord, $words)
         {
             $wordCount = $this->frequencyOfMultipleWords($searchWord, $words);
             if ($wordCount > 0) {
                 return $wordCount;
             } else {
-                return "No Match Found!";
+                return "No Matches Found!";
             }
         }
     }
