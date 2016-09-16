@@ -22,13 +22,6 @@
             }
             return $wordCount;
         }
-        // function isWordFound($searchWord, $word)
-        // {
-        //     if ($this->compareOneWord($searchWord, $word) == 0) {
-        //         $output = "No Matches Found!";
-        //     }
-        //     return $output;
-        // }
         function frequencyOfMultipleWords($searchWord, $words)
         {
             $words = str_ireplace("/", " ", $words);

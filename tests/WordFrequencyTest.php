@@ -15,19 +15,6 @@
             //Assert
             $this->assertEquals(1, $output);
         }
-        function test_compareOneWord_isWordNotFound()
-        {
-            //Arrange
-            $test_RepeatCounter = new RepeatCounter;
-            $searchWord = "Hello";
-            $word = "Bye";
-
-            //Act
-            $output = $test_RepeatCounter->compareOneWord($searchWord, $word);
-
-            //Assert
-            $this->assertEquals(0, $output);
-        }
         function test_compareOneWord_caseDoesNotMatter()
         {
             //Arrange
