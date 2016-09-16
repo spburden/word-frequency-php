@@ -15,7 +15,6 @@
             //Assert
             $this->assertEquals(1, $output);
         }
-
         function test_isWordFound()
         {
             //Arrange
@@ -29,7 +28,6 @@
             //Assert
             $this->assertEquals("No Match Found!", $output);
         }
-
         function test_caseDoesNotMatter()
         {
             //Arrange
@@ -43,7 +41,6 @@
             //Assert
             $this->assertEquals(1, $output);
         }
-
         function test_punctuationDoesNotMatter()
         {
             //Arrange
@@ -57,7 +54,6 @@
             //Assert
             $this->assertEquals(1, $output);
         }
-
         function test_frequencyOfMultipleWords()
         {
             //Arrange
@@ -71,7 +67,6 @@
             //Assert
             $this->assertEquals(2, $output);
         }
-
         function test_getWordFrequency()
         {
             //Arrange
@@ -85,7 +80,6 @@
             //Assert
             $this->assertEquals("No Match Found!", $output);
         }
-
     }
         // export PATH=$PATH:./vendor/bin first and then you will only have to run  $ phpunit tests
 ?>

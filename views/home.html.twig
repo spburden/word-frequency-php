@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <meta charset="utf-8">
-        <title></title>
+        <title>Word Frequency</title>
     </head>
     <body>
-        <h1>Return</h1>
-        <form class="" action="/result" method="post">
-            <label for="">Enter :</label>
-            <input type="text" name="" required>
-            <button type="submit" name="button">Return</button>
-        </form>
-        <div class="result">
-            {% if result %}
-            <h2> This result is {{ result }}</h2>
-            {% endif %}
+        <div class="container">
+            <h1>Calculate Frequency of a Word</h1>
+            <form class="form-group" action="/result" method="get">
+                <label for="searchWord">Enter a word a search word:</label>
+                <input type="text" name="searchWord" required>
+                <label for="words">Enter Text:</label>
+                <textarea class="form-control" rows="5" name="words"></textarea>
+                <button type="submit" name="button">Return</button>
+            </form>
         </div>
     </body>
 </html>
