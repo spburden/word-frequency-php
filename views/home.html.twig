@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
         <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
         <title>Word Frequency</title>
     </head>
     <body>
         <div class="container">
-            <h1>Calculate Frequency of a Word</h1>
+            <div class="well header">
+                <h1>Calculate Frequency of a Word</h1>
+            </div>
             <form class="form-group" action="/result" method="get">
-                <label for="searchWord">Enter word a to search for:</label>
+                <label for="searchWord">Enter a word to search for:</label>
                 <input type="text" name="searchWord" required>
                 <br>
                 <br>
