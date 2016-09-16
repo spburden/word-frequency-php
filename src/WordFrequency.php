@@ -6,6 +6,7 @@
         {
             $searchWord = strtolower($searchWord);
             $word = strtolower($word);
+            $word = str_ireplace("!", "", $word);
             $wordCount = 0;
             if ($searchWord == $word) {
                 $wordCount += 1;

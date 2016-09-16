@@ -44,6 +44,20 @@
             $this->assertEquals(1, $output);
         }
 
+        function test_punctuationDoesNotMatter()
+        {
+            //Arrange
+            $test_WordFrequency = new WordFrequency;
+            $searchWord = "hello";
+            $word = "Hello!!";
+
+            //Act
+            $output = $test_WordFrequency->frequencyOfAWord($searchWord, $word);
+
+            //Assert
+            $this->assertEquals(1, $output);
+        }
+
     }
         // export PATH=$PATH:./vendor/bin first and then you will only have to run  $ phpunit tests
 ?>
