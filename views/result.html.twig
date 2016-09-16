@@ -3,10 +3,13 @@
     <head>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <meta charset="utf-8">
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
         <title>Word Count</title>
     </head>
-    <body>
-        <div class="container">
+    <body class="results">
+        <div class="container result">
             {% if result %}
             <h2> Result: {{ result }}</h2>
             {% endif %}

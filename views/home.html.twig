@@ -7,19 +7,23 @@
         <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
         <title>Word Frequency</title>
     </head>
-    <body>
+    <body class="home">
         <div class="container">
             <div class="well header">
                 <h1>Calculate Frequency of a Word</h1>
             </div>
+            <br>
+            <br>
             <form class="form-group" action="/result" method="get">
                 <label for="searchWord">Enter a word to search for:</label>
                 <input type="text" name="searchWord" required>
                 <br>
                 <br>
-                <label for="words">Enter Text:</label>
-                <textarea class="form-control" rows="5" name="words" required></textarea>
-                <button class="btn btn-success" type="submit">Calculate</button>
+                <br>
+                <label for="words">Enter some text:</label>
+                <textarea class="textArea form-control" rows="7" name="words" required></textarea>
+                <br>
+                <button class="btn btn-primary" type="submit">Calculate</button>
             </form>
         </div>
     </body>
