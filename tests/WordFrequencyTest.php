@@ -48,8 +48,8 @@
         {
             //Arrange
             $test_WordFrequency = new WordFrequency;
-            $searchWord = "hello";
-            $word = "Hello!!";
+            $searchWord = "hello.";
+            $word = "Hell'.o!!,(?:;)";
 
             //Act
             $output = $test_WordFrequency->frequencyOfAWord($searchWord, $word);
