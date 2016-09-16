@@ -2,7 +2,7 @@
     require_once "src/WordFrequency.php";
     class WordFrequencyTest extends PHPUnit_Framework_TestCase
     {
-        function test_frequencyOfAWord()
+        function test_compareOneWord()
         {
             //Arrange
             $test_WordFrequency = new WordFrequency;
@@ -10,7 +10,7 @@
             $word = "Hello";
 
             //Act
-            $output = $test_WordFrequency->frequencyOfAWord($searchWord, $word);
+            $output = $test_WordFrequency->compareOneWord($searchWord, $word);
 
             //Assert
             $this->assertEquals(1, $output);
@@ -38,7 +38,7 @@
             $word = "Hello";
 
             //Act
-            $output = $test_WordFrequency->frequencyOfAWord($searchWord, $word);
+            $output = $test_WordFrequency->compareOneWord($searchWord, $word);
 
             //Assert
             $this->assertEquals(1, $output);
@@ -52,7 +52,7 @@
             $word = "Hell'.o!!,(?:;)";
 
             //Act
-            $output = $test_WordFrequency->frequencyOfAWord($searchWord, $word);
+            $output = $test_WordFrequency->compareOneWord($searchWord, $word);
 
             //Assert
             $this->assertEquals(1, $output);
@@ -63,13 +63,27 @@
             //Arrange
             $test_WordFrequency = new WordFrequency;
             $searchWord = "hello";
-            $words = "Hello, Hello world";
+            $words = "Hello world, hello!";
 
             //Act
             $output = $test_WordFrequency->frequencyOfMultipleWords($searchWord, $words);
 
             //Assert
             $this->assertEquals(2, $output);
+        }
+
+        function test_getWordFrequency()
+        {
+            //Arrange
+            $test_WordFrequency = new WordFrequency;
+            $searchWord = "hello";
+            $words = "Bye, dude!";
+
+            //Act
+            $output = $test_WordFrequency->getWordFrequency($searchWord, $words);
+
+            //Assert
+            $this->assertEquals("No Match Found!", $output);
         }
 
     }

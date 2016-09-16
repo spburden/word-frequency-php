@@ -2,7 +2,7 @@
     class WordFrequency
     {
 
-        function frequencyOfAWord($searchWord, $word)
+        function compareOneWord($searchWord, $word)
         {
             $searchWord = strtolower($searchWord);
             $searchWord = str_ireplace(".", "", $searchWord);
@@ -27,7 +27,7 @@
 
         function isWordFound($searchWord, $word)
         {
-            if ($this->frequencyOfAWord($searchWord, $word) == 0) {
+            if ($this->compareOneWord($searchWord, $word) == 0) {
                 $output = "No Match Found!";
             }
             return $output;
@@ -38,10 +38,19 @@
             $words = explode(" ", $words);
             $wordCount = 0;
             for ($i=0; $i < sizeof($words); $i++) {
-                $wordCount += $this->frequencyOfAWord($searchWord, $words[$i]);
+                $wordCount += $this->compareOneWord($searchWord, $words[$i]);
             }
             return $wordCount;
         }
 
+        function getWordFrequency($searchWord, $words)
+        {
+            $wordCount = $this->frequencyOfMultipleWords($searchWord, $words);
+            if ($wordCount > 0) {
+                return $wordCount;
+            } else {
+                return "No Match Found!";
+            }
+        }
     }
 ?>
