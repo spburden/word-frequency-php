@@ -59,7 +59,7 @@
             //Arrange
             $test_WordFrequency = new WordFrequency;
             $searchWord = "hello";
-            $words = "Hello world, hello!";
+            $words = "Hello/world, hello!";
 
             //Act
             $output = $test_WordFrequency->frequencyOfMultipleWords($searchWord, $words);
