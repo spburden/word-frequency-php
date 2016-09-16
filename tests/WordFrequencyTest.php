@@ -58,6 +58,20 @@
             $this->assertEquals(1, $output);
         }
 
+        function test_frequencyOfMultipleWords()
+        {
+            //Arrange
+            $test_WordFrequency = new WordFrequency;
+            $searchWord = "hello";
+            $words = "Hello, Hello world";
+
+            //Act
+            $output = $test_WordFrequency->frequencyOfMultipleWords($searchWord, $words);
+
+            //Assert
+            $this->assertEquals(2, $output);
+        }
+
     }
         // export PATH=$PATH:./vendor/bin first and then you will only have to run  $ phpunit tests
 ?>

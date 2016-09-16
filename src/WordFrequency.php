@@ -33,5 +33,15 @@
             return $output;
         }
 
+        function frequencyOfMultipleWords($searchWord, $words)
+        {
+            $words = explode(" ", $words);
+            $wordCount = 0;
+            for ($i=0; $i < sizeof($words); $i++) {
+                $wordCount += $this->frequencyOfAWord($searchWord, $words[$i]);
+            }
+            return $wordCount;
+        }
+
     }
 ?>
