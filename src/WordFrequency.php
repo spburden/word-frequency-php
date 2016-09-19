@@ -6,16 +6,8 @@
             $searchWord = strtolower($searchWord);
             $searchWord = str_ireplace(".", "", $searchWord);
             $word = strtolower($word);
-            $word = str_ireplace("!", "", $word);
-            $word = str_ireplace(",", "", $word);
-            $word = str_ireplace(".", "", $word);
-            $word = str_ireplace("!", "", $word);
-            $word = str_ireplace("?", "", $word);
-            $word = str_ireplace(")", "", $word);
-            $word = str_ireplace("(", "", $word);
-            $word = str_ireplace(":", "", $word);
-            $word = str_ireplace(";", "", $word);
-            $word = str_ireplace("'", "", $word);
+            $punctuation = array("!", ",", ".", "?", "(", ")", ":", "'", '"', ";");
+            $word = str_ireplace($punctuation, "", $word);
             $wordCount = 0;
             if ($searchWord == $word) {
                 $wordCount += 1;
