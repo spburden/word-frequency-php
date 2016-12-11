@@ -5,6 +5,8 @@
 ## Description
 _A basic web application which returns the frequency of a certain word in a paragraph. September 16, 2016_
 
+[Click here to view live](http://word-count-php.herokuapp.com/)
+
 ## Specifications
 | Behavior | Input Example | Output Example |
 | --- | --- | --- |
