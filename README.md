@@ -7,6 +7,9 @@ _A basic web application which returns the frequency of a certain word in a para
 
 [Click here to view live](http://word-count-php.herokuapp.com/)
 
+<img src="/screenshot2.png" alt="a screenshot of the site">
+<img src="/screenshot1.png" alt="a screenshot of the site">
+
 ## Specifications
 | Behavior | Input Example | Output Example |
 | --- | --- | --- |
